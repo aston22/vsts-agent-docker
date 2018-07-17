@@ -9,8 +9,7 @@ ENV HTTP_PROXY=$HTTP_PROXY `
     NO_PROXY=$NO_PROXY `
     WINDOWS_IMAGE_VERSION=$(WINDOWS_VERSION)
 
-RUN mkdir C:\TFS `
- && mkdir C:\Setup
+RUN mkdir C:\TFS; mkdir C:\Setup
 
 WORKDIR C:/Setup
 
