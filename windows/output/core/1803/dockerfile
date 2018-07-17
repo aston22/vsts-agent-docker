@@ -1,13 +1,13 @@
 # escape=`
-FROM microsoft/dotnet-framework:4.7.1-sdk-windowsservercore-$(WINDOWS_VERSION)
+FROM microsoft/dotnet-framework:4.7.1-sdk-windowsservercore-1803
 
-LABEL name="microsoft/vsts-agent:windows-core-$(WINDOWS_VERSION)" `
+LABEL name="microsoft/vsts-agent:windows-core-1803" `
       version="0.0.1"
 
 ENV HTTP_PROXY=$HTTP_PROXY `
     HTTPS_PROXY=$HTTPS_PROXY `
     NO_PROXY=$NO_PROXY `
-    WINDOWS_IMAGE_VERSION=$(WINDOWS_VERSION)
+    WINDOWS_IMAGE_VERSION=1803
 
 RUN mkdir C:\TFS `
  && mkdir C:\Setup
@@ -20,3 +20,4 @@ RUN netsh.exe winhttp set proxy proxy-server="http=%HTTP_PROXY%;https=%HTTPS_PRO
  && @powershell -ExecutionPolicy Bypass -File .\setprofile.ps1
 
 WORKDIR C:\
+
