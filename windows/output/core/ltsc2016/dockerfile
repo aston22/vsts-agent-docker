@@ -15,7 +15,10 @@ WORKDIR C:/Setup
 
 COPY setup/ .
 
-RUN netsh.exe winhttp set proxy proxy-server="http=%HTTP_PROXY%;https=%HTTPS_PROXY%" bypass-list="%NO_PROXY%"; `
+SHELL ["cmd", "/S", "/C"]
+RUN netsh.exe winhttp set proxy proxy-server="http=%HTTP_PROXY%;https=%HTTPS_PROXY%" bypass-list="%NO_PROXY%"
+
+SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
  .\setprofile.ps1
 
 WORKDIR C:\
