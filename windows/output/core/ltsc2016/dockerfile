@@ -16,7 +16,7 @@ WORKDIR C:/Setup
 COPY setup/ .
 
 RUN netsh.exe winhttp set proxy proxy-server="http=%HTTP_PROXY%;https=%HTTPS_PROXY%" bypass-list="%NO_PROXY%"; `
- @powershell -ExecutionPolicy Bypass -File .\setprofile.ps1
+ .\setprofile.ps1
 
 WORKDIR C:\
 
