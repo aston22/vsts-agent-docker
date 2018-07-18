@@ -1,5 +1,5 @@
 # escape=`
-FROM microsoft/vsts-agent:$(AGENT_TAG)
+FROM jmacr.azurecr.io/microsoft/vsts-agent:$(AGENT_TAG)
 
 LABEL name="microsoft/vsts-agent:$(AGENT_TAG)-minimal-vs2017" `
       version="0.0.1"
