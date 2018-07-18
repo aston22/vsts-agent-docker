@@ -1,5 +1,5 @@
 # escape=`
-FROM microsoft/vsts-agent:windows-core-1709
+FROM jmacr.azurecr.io:microsoft/vsts-agent:windows-core-1709
 
 LABEL name="microsoft/vsts-agent:windows-core-1709-2.122.1" `
       version="0.0.1"
